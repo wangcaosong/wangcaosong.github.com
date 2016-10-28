@@ -12,7 +12,7 @@ body{width:100%;}
 #dowebok .section1{ height:763px;  width: 100%; position: relative;}
   .section2,.section3,.section4{width: 1200px; background:#f4f4f4; height:768px;}  
   .section3{background:url(img/2_02.png) no-repeat; background-size:100%； }
-.section2 p { position: relative; left: -300%;}
+.section2 p { display: none; color: #83a6bf;}
 .section4 p { display: none; color: #83a6bf;}
 .section4{ height:531px; }
 
@@ -134,7 +134,7 @@ body{width:100%;}
       margin-top:20px;
       font-size:38px;
       height:38px;
-    
+      color:#fff;
        text-align:center;
        line-height:38px;
      }
@@ -354,9 +354,7 @@ body{width:100%;}
 
             }
             if(index == 2){
-                $('.section2').find('p').animate({
-                    left: '0'
-                }, 1500, 'easeOutExpo');
+              $('.section2').find('p').fadeIn(2000);
             }
             if(index == 3){
                  $('.section3').find('h3').addClass('shake')
@@ -374,9 +372,7 @@ body{width:100%;}
 
             }
             if(index == '2'){
-                $('.section2').find('p').animate({
-                    left: '-300%'
-                }, 1500, 'easeOutExpo');
+              $('.section2').find('p').fadeOut(2000);
             }
             if(index == '3'){
                  $('.section3').find('h3').removeClass('shake')
