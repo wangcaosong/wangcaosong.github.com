@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>王曹松个人站</title>
+<link href="css/base.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<style>
+body{width:100%;}
+#dowebok{background:url(img/8_02.png) no-repeat; background-size:100%; }
+.section {width: 1200px; text-align:center;  font: 50px "Microsoft Yahei"; color: #f4f4f4; }
+#dowebok .section1{ height:763px;  width: 100%; position: relative;}
+  .section2,.section3,.section4{width: 1200px; background:#f4f4f4; height:768px;}  
+  .section3{background:url(img/2_02.png) no-repeat; background-size:100%； }
+.section2 p { position: relative; left: -300%;}
+.section4 p { display: none; color: #83a6bf;}
+.section4{ height:531px; }
+
+ #dowebok ul{
+       position: absolute;
+       left:1065px;
+       top:20px;
+        width:400px;
+        height: 80px;
+    }
+    .section2 .black{
+        position: absolute;
+       top:-60px;
+        left:-100px;
+        margin-left: 100px;
+        margin-bottom: 0;
+         height: 60px;
+         z-index: 1;
+
+    }
+   .section1 .top{
+    width:500px;
+    height:400px;
+    position: absolute;
+    top: 105px;
+   left:350px;
+   display: none;
+   }
+   .section1 p{
+     position: absolute;
+    font-family:华文行楷;
+    color:#3d7199;
+     width:1000px;
+    height:50px;
+     left:110px;
+      top:535px;
+       display: none;
+   }
+      #nav li{
+         position: relative;
+         top:37px;
+        left: 0px;
+        float: left;
+          width:90px;
+         height:20px;
+      }
+      #nav li a{
+           width:90px;
+            height:20px;
+            display: block;
+            z-index:1;
+
+      }
+    #nav .nav2{
+          position: absolute;
+          top:0;
+          left:0;
+         width:90px;
+         height:20px;
+        text-align:center;
+        transform-style: preserve-3d;
+        transition: 0.3s all ease;
+    }
+    #nav li span{
+        position: absolute;
+        top:0px;
+        left: 0px;
+         width:90px;
+         height: 20px;
+         line-height: 20px;
+         font-size:21px;
+        text-align:center;
+        color: #fff;
+        transform:translateZ(8px); 
+    }
+    #nav li i{
+       position: absolute;
+       cursor:pointer; 
+        top:10px;
+        left: 0px;
+        display: block;
+        font-size:21px;
+        width:90px;
+         height:20px;
+         line-height:20px;
+         color:#5e8ac6;
+        text-align:center;
+       transform:rotateY(180deg) rotateZ(180deg) rotateX(90deg); 
+    }
+    .nav1{
+        margin-right:17px;
+        margin-left: 17px;
+    }
+    .section2 .photo{
+         border-radius: 50%;
+         border:7px solid #99c5e5;
+        width:270px;
+        height: 270px;
+        text-align:center;
+        background:#fff;
+        margin:30px auto 0;
+        position: absolute;
+        top:0;
+        left:50%;
+        margin-top:-130px;
+        margin-left:-130px;
+    }
+    .section2 .content{
+        margin:0 auto;
+         width:1200px;
+        height:267px;
+        background:#83a6bf;
+        position: relative;
+        top:15%;
+    }
+     .section2 .name p{
+      width:277px;
+      text-align:center;
+      margin-top:20px;
+      font-size:38px;
+      height:38px;
+    
+       text-align:center;
+       line-height:38px;
+     }
+     .section2 .name .p1{
+      font-size:24px;
+      height:24px;
+      margin-top:10px;
+
+     }
+    .section2 .content1{
+        padding-top:20px;
+        margin:0 auto;
+        width:1200px;
+        height:247px;
+        background:#fff;
+        position: relative;
+        top:15%;
+    }
+    .section2 .content1 p{
+      font-size:17px;
+      height: 38px; 
+      line-height:38px;
+      margin-left:120px;
+      text-align: left;
+      color:#94b2c8;
+    }
+    .section2 .Personal{
+       width: 100%;
+       height:1.6rem;
+       text-align:left;
+       line-height: 1.6rem;
+        font-size:1.5rem;
+        margin-top:30px;
+        margin-left:30px;
+    }
+    .section2 .name{
+        width:260px;
+        height:260px;
+        position: absolute;
+        top:0;
+        left:50%;
+        margin-top:150px;
+        margin-left:-130px;
+        font-size:1.5rem;
+    }
+    .section3 .works{
+        display:-webkit-box;
+        width:1200px;
+        height:402px;
+        margin-top: 8%;
+         margin:0 auto;
+        
+    }
+    .section3 h3{
+        width: 1200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        font-size: 40px;
+        margin:0 auto;
+         -webkit-animation-duration: 0.4s;
+         -webkit-animation-fill-mode: both;
+    }
+    .section3 .works div{
+        width:262px;
+        height:402px;
+        overflow: hidden;
+        -webkit-box-flex:1;
+        margin-right: 14px;
+        background: #fff;
+        margin-left:14px; 
+        border-radius: 8%;
+        opacity: 0;
+        position: relative;
+         -webkit-animation-duration: 1.5s;
+         -webkit-animation-fill-mode: both;
+    }
+    .section3 .works div span{ 
+            width:100%;
+             height:130px; 
+             position:absolute; 
+             top:-100%;
+             left:0; 
+             opacity: 0.3;
+             background:#000; 
+             font-size:50px; 
+             text-align:center; 
+             line-height:120px;
+         }
+      @-webkit-keyframes shake {
+                  from, to {
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                  }
+
+                  10%, 50%, 90% {
+                    -webkit-transform: translate3d(-10px, 0, 0);
+                    transform: translate3d(-10px, 0, 0);
+                  }
+
+                   30%, 70%{
+                    -webkit-transform: translate3d(10px, 0, 0);
+                    transform: translate3d(10px, 0, 0);
+                  }
+                }
+                 .shake {
+                          -webkit-animation-name: shake;
+                        }
+                /*文字效果*/
+     @-webkit-keyframes rotateInUpRight {
+          from {
+            -webkit-transform-origin: right bottom;
+            -webkit-transform: rotate3d(0, 0, 1, -90deg);
+            opacity: 0;
+          }
+
+          to {
+            -webkit-transform-origin: right bottom;
+            -webkit-transform: none;
+            opacity: 1;
+          }
+        }
+        .rotateInUpRight {
+          -webkit-animation-name: rotateInUpRight;
+        }
+
+         @-webkit-keyframes rotateInUpLeft {
+          from {
+            -webkit-transform-origin: left bottom;
+            -webkit-transform: rotate3d(0, 0, 1, 90deg);
+            opacity: 0;
+          }
+
+          to {
+            -webkit-transform-origin: left bottom;
+            -webkit-transform: none;
+            opacity: 1;
+          }
+        }
+        .rotateInUpLeft {
+          -webkit-animation-name: rotateInUpLeft;
+        }
+        /*作品进入效果*/
+
+      .section4 h3{
+        font-size:30px;
+        color:#83a6bf;
+        margin-top:16px;
+      }
+      .section4 .cont{
+        width:1200px;
+        height: 290px;
+        margin:220px auto 0;
+        overflow: hidden;
+        display:-webkit-box;
+      }
+      .section4 .cont div{
+        width:186px;
+        height:290px;
+        -webkit-box-flex:1;
+        margin-right:148px; 
+      }
+      .section4 .cont .div1{
+        margin-right:0; 
+      }
+      .section4 .cont .phone{
+        display: block;
+        width:190px;
+        height:205px;
+        background: url(img/3.png) no-repeat;
+      }
+      .section4 .cont .phone1{background: url(img/4.png) no-repeat;}
+      .section4 .cont .phone2{background: url(img/5.png) no-repeat;}
+      .section4 .cont .phone3{background: url(img/6.png) no-repeat;}
+      .section4 .cont p{
+        font-size:24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        color:#8cacc3;
+        margin-top: 20px;
+      }
+      .section4 .cont .number{
+        margin-top:16px;
+      }
+      .cont .number1{text-indent: -35px;}
+</style>
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+   
+
+<script>
+      function a2d(n){
+            return n*180/Math.PI;
+       }
+    function d2a(n){
+          return n*Math.PI/180;
+      }
+ $(function(){
+                $('.section1').find('.top').fadeIn(2000);
+                   $('.section1').find('p').fadeIn(2000);
+    $('#nav li').hover(function(){
+        $('#nav li div').eq($(this).index()).css({'transform':'rotateX(90deg)'});
+    },
+      function(){ 
+         $('#nav li div').eq($(this).index()).css({'transform':'rotateX(0deg)'});
+    })
+
+    $('#dowebok').fullpage({
+        afterLoad: function(anchorLink, index){
+             if(index == 1){
+               $('.section1').find('.top').fadeIn(2000);
+                $('.section1').find('p').fadeIn(2000);
+
+            }
+            if(index == 2){
+                $('.section2').find('p').animate({
+                    left: '0'
+                }, 1500, 'easeOutExpo');
+            }
+            if(index == 3){
+                 $('.section3').find('h3').addClass('shake')
+                $('.section3').find('.works .works1').addClass('rotateInUpRight')
+                $('.section3').find('.works .works2').addClass('rotateInUpLeft')
+            }
+            if(index == 4){
+                $('.section4').find('p').fadeIn(2000);
+            }
+        },
+        onLeave: function(index, direction){
+           if(index == 1){
+               $('.section1').find('.top').fadeOut(0);
+                $('.section1').find('p').fadeOut(0);
+
+            }
+            if(index == '2'){
+                $('.section2').find('p').animate({
+                    left: '-300%'
+                }, 1500, 'easeOutExpo');
+            }
+            if(index == '3'){
+                 $('.section3').find('h3').removeClass('shake')
+                $('.section3').find('.works .works1').removeClass('rotateInUpRight')
+                $('.section3').find('.works .works2').removeClass('rotateInUpLeft')
+            }
+            if(index == '4'){
+                $('.section4').find('p').fadeOut(2000);
+            }
+        }
+    });
+         (function(){
+            var oDiv=document.querySelectorAll('.section3 .works div');
+        for(var i=0; i<oDiv.length;i++){
+            oDiv[i].onmouseenter=function(ev){
+                var oSpan=this.children[0];
+                $(oSpan).animate({'left':0,'top':'70%'},{duration:200});
+            };
+            
+            oDiv[i].onmouseleave=function(ev){
+                var oSpan=this.children[0];
+                $(oSpan).animate({'left':0,'top':100+'%'},{duration:200})
+            };      
+         }
+     })()
+
+  
+
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="dowebok">
+    <div class="section section1" data-anchor="page1">
+               <ul id="nav" >
+                   <li><a href="#page1"><div class="nav2"><span>简介</span><i>简介</i></div></a></li>
+                   <li><a href="#page2"><div class="nav2"><span>个人简介</span><i>个人简介</i></div></a></li>
+                   <li class="nav1"><a href="#page3"><div class="nav2"><span>案例作品</span><i>案例作品</i></div></a></li>
+                   <li><a href="#page4"><div class="nav2"><span>联系方式</span><i>联系方式</i></div></a></li>
+               </ul>
+               <img src="img/8_03.png" alt="" class="top" />
+               <p>“态度决定高度，细节决定成败”</p>
+               
+    </div>
+
+
+    <div class="section section2" data-anchor="page2">
+          <img src="img/7.png" alt="" class="black" />
+        <h3 class="Personal">个人简介</h3>
+        <div class="content">
+             <div class="photo"></div> 
+             <div class="name">
+                   <p >王曹松</p>       <!-- fadeInLeft -->
+                   <p class="p1">前端开发工程师</p>
+             </div>
+        </div> 
+        <div class="content1">
+                <p>1. 掌握HTML/CSS，能够兼容主流游览器，能手写符合w3c标准的页面，懂得优雅降级等常用代码；熟悉组建来发</p>
+                <p>2. 掌握JavaScript,掌握js中Ajax,jsonp交互等常用代码，熟悉angular的交互</p>
+                <p>3. 掌握HTML5、CSS3，掌握移动端和pc端响应式布局，canvas等H5常用功能</p>
+                <p>4. 会使用zepto,jquerymobiel等移动端库</p>
+                <p>5. 掌握jQuery,可以使用jQuery实现项目开发，熟悉jquery组件开发</p>
+        </div>     <!-- pulse -->
+        
+    </div>
+
+
+    <div class="section section3" data-anchor="page3">
+        <h3>Work case</h3>
+        <div class="works">
+                <div class="works1" ><span>项目</span></div>
+                <div class="works2" ><span>项目</span></div>
+                <div class="works2" ><span>项目</span></div>                 
+                <div class="works1" ><span>项目</span></div> 
+        </div>                                                                           <!--  bounceInDown      fadeInDown-->    <!-- rotateInUpRight-->
+        
+    </div>
+    <div class="section section4" data-anchor="page4">
+        <h3>联系方式</h3>
+        <div class="cont">
+             <div>
+                <span class="phone"></span>
+                <p >手机</p>
+                <p class="number">13699211322</p>
+             </div>
+             <div>
+                <span class="phone phone1"></span>
+                <p >邮箱</p>
+                <p class="number number1">13699211322@163.com</p>
+             </div>
+             <div>
+               <span class="phone phone2"></span>
+               <p >微信</p>
+                <p class="number">13699211322</p>
+             </div>
+             <div class="div1">
+               <span class="phone phone3"></span>
+                <p >QQ</p>
+                <p class="number">492981828</p>
+             </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
