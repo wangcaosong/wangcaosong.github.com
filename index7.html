@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>fullPage.js — 项目导航演示_dowebok</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/base.css">
+<style>
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.nav{height:41px; width:100%; border-bottom:1px solid #6c6b6a; position: fixed; top:0; left:0; z-index:1; overflow:hidden;}
+.nav .nav-top{float:right; margin-right:39px;}
+.nav .nav-top li{width:56px; height:40px; text-align: center; line-height: 40px; font-size: 13px; color:#fff; float: left; position: relative;}
+.nav .nav-top .nav-bor{border-bottom:1px solid #fff;}
+.section1 .option{width: 100%; height:100%; background: url(images/1_03.png) no-repeat; background-size:100% 100%; }
+
+/*第二页*/
+.section2 .products{width:100%; height:33px; margin-top:134px; position: relative;}
+.products .products_h{width:54px; height:33px; position:absolute; left:64px; top:0; }
+.products .products_h1{height:17px; font-size:17px; color:#fff; text-align:left; line-height:17px;} 
+.products .products_h2{height:16px; font-size:8px; color:#907c75; line-height:21px;}
+.section2 .products .nav2{height:8px; position: absolute; right:39px; top:16px;}
+.section2 .products .nav2 li{width:47px; height:8px; line-height:8px; text-align: center; color:#8c8783; font-size:8px; float:left;}
+.section2 .products .nav2 .lin{background:url(images/2_07.png) no-repeat right 0;}
+.section2 .products .nav2 .lin1{width:84px; }
+/*菜品*/
+
+.section2 .box1{width: 1147px; height:240px; overflow: hidden; margin:33px auto;}
+.section2 .box1 li{width:277px; height:239px; float: left;}
+.section2 .box1 .food{padding-right:13px;}
+.section2 .box1 img{width:277px; height:180px;}
+.section2 .box1 .food{width:277px; }
+.section2 .box1 .food1{height:10px; font-size:10px; color:#fff; line-height:10px; margin-top:16px; margin-left:13px; text-align:left;}
+.section2 .box1 .food2{height:8px; font-size:10px; color:#95827c; line-height:8px; margin-top:8px; margin-left:13px; text-align:left;}
+.section2 .box2{ overflow: hidden; width: 50px; height:20px; margin:0 auto;}
+.section2 .box2 a{display: block; width:24px; height:20px; float: left;}
+.section2 .box2 span{display:block; width:2px; height:20px; float: left; background:#2d2d2d;}
+.section2 .box2 .al{background:url(images/4_15.png) no-repeat;}
+.section2 .box2 .ar{background:url(images/5_15.png) no-repeat;}
+
+/*第三页*/
+.section3 .service{width:100%; height:100%; background:url(images/6_03.png);} 
+.section3 .products{width:100%; height:33px; padding-top:134px; position: relative;}
+.section3 .products .products_h{top:134px;}
+.section3 .service .service1{width:250px; height:100%; }
+.service ul{height:100%; width: 750px; position: absolute;  top:0; left:50%; margin-left:-375px;}
+.service .service1{height: 100%;}
+.service1 .cent{width:250px; position: absolute; top:40%; }
+.service1 .tu1{width:81px; height:51px; background:url(images/8_03.png) no-repeat; margin-top: 96px; margin:0 auto;}
+.service1 h3{width:100%; font-size:14px; height: 14px; text-align: center; margin-top:45px; color:#fff;}
+.service1 p{width: 100%; font-size:10px; height:16px; text-align: center; margin-top:28px; color:#777575; line-height: 16px;}
+.service1 .service1_t{background: url(images/9_06.png);}
+.service1 .service1_t1{background: url(images/10_05.png);}
+.service4{position: absolute; top: 0; left:0;}
+.service2{position: absolute; top: 0; left:268px;}
+.service3{position: absolute; top: 0; left:536px;}
+/*第四页*/
+.section4{width:1272px; height:645px; overflow: hidden;}
+.section4 .about{width:50%; height:100%; background: url(images/11_03.png) no-repeat; float: left; background-size:100% 100%; }
+.section4 .about1{width:50%; height:100%; background:#212121; float: left; position:relative;}
+.about1 .about_p1{height:15px; font-size:15px; color:#fff; text-align:left; line-height:15px; margin-top: 174px; margin-left: 90px;}
+.about1 .about_p2{height:9px; font-size:9px; color:#907c75; line-height:9px; margin-top:7px; margin-left: 90px; text-align: left;}
+.about1 .about_en{font-size:8px; color:#907c75; width:486px; position:absolute; top:248px; left:90px; line-height:18px; }
+.about1 .about_box{width: 154px; height:28px; background:#494949; color:#fff; font-size:8px; position: absolute; left:90px; top:346px; line-height:28px;}
+/*第五页*/
+.section5{width:1600px; height:100%; background: url(images/12_03.png) no-repeat; background-size:100% 100%; }
+.section5 .new{position:absolute; top:182px; left:72px;}
+.section5 .new_1{height:15px; font-size:15px; color:#fff; text-align:left; line-height:15px;}
+.section5 .new_2{height:9px; font-size:9px; color:#907c75; line-height:9px; text-align: left; margin-top:7px; }
+.section5 .new2{position: absolute; top:182px; left:305px;}
+.section5 .new2 img{width:283px; height:151px; }
+.section5 .new2 .new2_1{width:283px; height:14px; color:#fff; padding-left:15px; border-left:1px solid #fff; margin-top:27px; line-height:14px; margin-bottom: 20px; font-size:12px; text-align:left;}
+.section5 .new2 .new2_tim{position: absolute; top:175px; left:-60px;}
+.section5 .new2 .new2_2{color:#fff; font-size: 16px; height: 20px;}
+.section5 .new2 .new2_3{color:#fff; font-size: 10px; height: 20px; line-height: 20px; text-align:right;}
+.section5 .new2 .new2_4{width:283px; height:20px; color:#fff; padding-left:15px; font-size:10px; text-align:left; line-height: 2;}
+.section5 .new2 .new2_5{color:#fff; font-size:8px; margin-left:45px; margin-top:55px; display:block; width: 45px;}
+.section5 .new3{position: absolute; top:160px; left:765px; border-bottom:1px solid #39382f; width:231px; height: 105px;}
+.section5 .new3_1{width:209px; height:12px; color:#fff; padding-left:13px; margin-top:27px; line-height:12px; margin-bottom:13px; font-size:12px; text-align:left;}
+.section5 .new3_tim{position: absolute; top:21px; left:-60px;}
+.section5 .new3_2{color:#fff; font-size: 16px; height: 20px;}
+.section5 .new3_3{color:#fff; font-size: 10px; height: 20px; line-height: 20px; text-align:right;}
+.section5 .new3_4{width:211px; height:20px; color:#777373; padding-left:13px; font-size:10px; text-align:left; line-height: 2;}
+.section5 .new4{position: absolute; top:266px; left:765px; border-bottom:1px solid #39382f; width:231px; height: 105px;}
+.section5 .new5{position: absolute; top:372px; left:765px; border-bottom:1px solid #39382f; width:231px; height: 105px;}
+.section5 .bord{position: absolute; top: 0; left:765px; ; width: 1px; height: 100%; background:#39382f;}
+/*第六页*/
+.section6{width:1272px; height:645px; background:#212121;}
+.section6 .jose_1{width:100%; height:130px; overflow: hidden; margin-top:150px;}
+.section6 .jose_1 .jose_d{width:95px; height: 95px; background:url(images/14_07.png) no-repeat; border-radius:50%; margin-left: 300px;}
+.section6 .jose_1 .jose_d1{height: 56px; width:175px; border-left:1px solid #383838; margin-left:30px; margin-top:20px;  }
+.section6 .jose_1 .jose_d1 .jose_p1{height:14px; font-size:14px; line-height: 14px; margin-top:11px; margin-bottom:5px; }
+.section6 .jose_1 .jose_d1 .jose_p2{height:9px; font-size:9px; line-height: 9px; color:#7a7a7a; margin-left:40px; text-align: left;}
+.section6 .jose_1 .jose_7{width: 275px; height:9px; line-height:15px; color:#646464; font-size:9px; margin-top:30px; text-align: left; position: relative;}
+.section6 .jose_1 .jose_8{width:12px; height: 19px; position: absolute; top:4px; left:349px; background: url(images/17_10.png) no-repeat;}
+.section6 .jose .jos_w{margin-top:0;}
+.section6 .jose_1 .jose_dl{background: url(images/15_11.png) no-repeat;}
+.section6 .jose_1 .jose_dt{background: url(images/16_15.png) no-repeat;}
+
+/*第六页*/
+.section7{background:#212121; }
+.section7 .our{width:70px; height:35px; position: absolute; top:180px; left: 64px;}
+ .section7 .our .our_h1{width:70px; font-size:16px; height:16px; line-height: 16px; margin-bottom:9px; color:#fefcff;}
+ .section7 .our .our_h2{width:70px; font-size:8px; height:8px; line-height:8px; color:#a4a8a9;}
+.section7 .part{width:643px; height: 61px; margin:240px auto 0;}
+.section7 .part li{width:160px; height:61px; float:left;}
+.section7 .part li a{display: block; width: 160px; height: 61px; background: url(images/18_03.png) no-repeat;}
+.section7 .part li .part_a1{background: url(images/18_03.png) no-repeat;}
+.section7 .part li .part_a2{background: url(images/19_03.png) no-repeat;}
+.section7 .part li .part_a3{background: url(images/20_03.png) no-repeat;}
+.section7 .part li .part_a4{background: url(images/21_03.png) no-repeat;}
+.section7 .part li .part_a5{background: url(images/25_07.png) no-repeat;}
+.section7 .part li .part_a6{background: url(images/24_07.png) no-repeat;}
+.section7 .part li .part_a7{background: url(images/23_07.png) no-repeat;}
+.section7 .part li .part_a8{background: url(images/22_06.png) no-repeat;}
+.section7 .part .part_b{border-right:1px solid #343434; }
+.section7 .lin{width: 100%; height: 1px; background:#343434; margin-top:32px;}
+.section7 .part1{margin-top:32px;}
+/*第八页*/
+.section8{background:#1a1a1a; width:1272px; height:100%;}
+.section8 .contact{width:70px; height:35px; position: absolute; top:172px; left: 64px;}
+ .section8 .contact .contact_h1{width:70px; font-size:16px; height:16px; line-height: 16px; margin-bottom:9px; color:#fefcff; text-align: left;}
+ .section8 .contact .contact_h2{width:70px; font-size:8px; height:8px; line-height:8px; color:#a4a8a9; text-align: left;}
+ .section8 .contact1{width:1272px; height:337px; background:#212121; position:absolute; bottom:0;}
+ .section8 .contact1_l1{width:255px; height:11px; text-align:left; color:#eaf0ee; position: absolute; top:55px; left:63px; font-size:11px; }
+.section8 .contact1_l1 .commun1{width:12px; height: 11px; background: url(images/26_03.png) no-repeat; position: absolute; top:1px; left:189px; }
+.section8 .contact1_l1 .commun2{width:11px; height: 11px; background: url(images/27_03.png) no-repeat; position: absolute; top:1px; left:216px; }
+.section8 .contact1_l1 .commun3{width:13px; height: 11px; background: url(images/28_03.png) no-repeat; position: absolute; top:1px; left:242px; }
+.section8 .contact1_l .infor{width:255px; height:9px; text-align:left; color:#555b5b; position: absolute; top:102px; left:63px; font-size:9px; }
+.section8 .contact1_l1 .infor1{color:#9da1a4;}
+.section8 .contact1_l .infor2{top:122px;}
+.section8 .contact1_l .infor3{top:142px;}
+.section8 .contact1_l .infor4{top:162px;}
+.section8 .contact1_l .infor5{top:182px;}
+.section8 .contact1_r{width:603px; height:; position: absolute; top:0px; left:570px;}
+#xm{width:191px; height: 42px; border:none; border-bottom:1px solid #4b4b4b; background:none; font-size: 8px; color:#4b4b4b; }
+#yx{width:191px; height: 42px; border:none; border-bottom:1px solid #4b4b4b; background:none; font-size: 8px; color:#4b4b4b; }
+#dh{width:191px; height: 42px; border:none; border-bottom:1px solid #4b4b4b; background:none; font-size: 8px; color:#4b4b4b; }
+#lr{width:600px;  height:77px;border:none; border-bottom:1px solid #4b4b4b; background:none; font-size: 8px; color:#4b4b4b; overflow:auto;  resize:none; margin-top:22px; outline: none;}
+.section8 .contact1_r .tx{width:65px; height: 24px; color:#f0f2f1; font-size:10px; line-height:10px; border:1px solid #4b4b4b; background:none; cursor: pointer; outline: none}
+</style>
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+		sectionsColor: ['#fff', '#212121', '#7BAABE', '#f90'],
+		'navigation': true,
+	});
+});
+</script>
+</head>
+
+<body>
+   <div class="nav" >
+		 <ul class="nav-top ">
+		 	<li class="nav-bor">首页</li>
+		 	<li>菜品</li>
+		 	<li>关于</li>
+		 	<li>图片</li>
+		 	<li>服务</li>
+		 	<li>服务</li>
+		 </ul>  	
+    </div>
+  <!--   导航头 -->
+<div id="dowebok">
+   
+	<div class="section section1">
+		   <div class="option"> 	
+		   </div>
+	</div>
+
+	<div class="section section2">
+		<div class="products">
+			 <div class="products_h">
+			 	<p class="products_h1">菜品</p>
+			 	<p class="products_h2">PRODUCTS</p>
+			 </div>
+			 <ul class="nav2">
+			 	<li class="lin">头盘</li>
+			 	<li class="lin">汤</li>
+			 	<li class="lin">副菜</li>
+                <li class="lin">主菜</li>
+                <li class="lin1">蔬菜类菜肴</li>
+			 </ul>
+		</div>
+		 <ul class="box1">
+			 	<li class="food">
+			 		    <img src="images/3_11.png" alt="">
+			 			<p class="food1">南非龙虾配澳洲带子（虾黄汁）</p>
+			 		    <p class="food2">头牌开胃菜</p>
+			 	</li>
+			 	<li class="food"> 
+                        <img src="images/3_11.png" alt="">
+			 			<p class="food1">南非龙虾配澳洲带子（虾黄汁）</p>
+			 		    <p class="food2">头牌开胃菜</p>
+			 	</li>
+			 	<li class="food">
+			 		   <img src="images/3_11.png" alt="">
+			 			<p class="food1">南非龙虾配澳洲带子（虾黄汁）</p>
+			 		    <p class="food2">头牌开胃菜</p>
+			 	</li>
+			 	<li>
+			 		   <img src="images/3_11.png" alt="">
+			 			<p class="food1">南非龙虾配澳洲带子（虾黄汁）</p>
+			 		    <p class="food2">头牌开胃菜</p>
+			 	</li>
+	     </ul>
+	     <div class="box2">
+	         <a href="#" class="al"></a>
+	     	 <span></span>
+	     	 <a href="#" class="ar"></a>
+	     </div>
+	</div>
+	<div class="section section3">
+	    <div class="service">	
+	         <div class="products">
+					 <div class="products_h">
+					 	<p class="products_h1">服务</p>
+					 	<p class="products_h2">PSERVICE</p>
+					 </div>
+				 </div>
+				 <ul >
+				 	<li class="service1 service4">
+				 	    <div class="cent">
+				 	    	 <div class="tu1"></div>
+					 		 <h3>西餐服务知识点</h3>
+					 		 <p>在西餐中最具有代表性的食物。那就是牛排莫属了，精致菜式大放送！全部都出自世界...</p>
+                              <p>></p>
+				 	    </div>
+				 		
+				 	</li >
+				 	<li class="service1 service2 ">
+				 	  <div class="cent">
+				 		 <div class="service1_t tu1"></div>
+				 		 <h3>西餐礼仪细节</h3>
+				 		 <p>吃沙拉时，通常会遇到较大片的菜叶，这时不要用刀子切开菜叶二刀叉将其折起来，再以...</p>
+                         <p>></p>
+                        </div>
+				 	</li>
+				 	<li class="service1 service3">
+				 	  <div class="cent">
+				 		 <div class="service1_t1 tu1"></div>
+				 		 <h3>米其林精美菜式须知</h3>
+				 		 <p>在法国，厨师属于意识家的范畴，法国还有一家全球闻名，历史悠久的为这些艺术家及他们的...</p>
+                         <p>></p>
+                        </div> 
+				 	</li>
+				 </ul>
+	    </div>
+	</div>
+	<div class="section section4">
+		<div class="about">
+		</div>
+		<div class="about1">
+            <p class="about_p1">关于</p>
+            <p class="about_p2">ABOUTUS</p>
+            <p class="about_en">UEMO Enterpries Edition is the latest research and dewelopment of the(UElike) in the small and medium enterprise website template system. the team has many years of rich experence,to understand the latest web site experience an ineraction principle,as far as possible for the user to consider and function,operation</p>
+            <a href="#" class="about_box">MORE ></a>
+		</div>
+	</div>
+	<div class="section section5">
+	        <div class="new">
+	     	    <p class="new_1">新闻</p>
+                <p class="new_2">NEWS</p>
+	        </div>
+	        <div class="new2">
+	        	<img src="images/13_03.png" alt="">
+	        	<p class="new2_1">食物有超乎想象的治愈力量，他能填饱肚子</p>
+	        	<div class="new2_tim">
+	        		 <p class="new2_2">12-08</p>
+	        	     <p class="new2_3">2015</p>
+	        	</div>
+	        	<p class="new2_4">除了面包和泡面之外，一个人的餐桌，也可以有更多选择一个人的生活除了面包和泡面之外，一个人的餐桌...</p>
+	        	<a href="#" class="new2_5">MORE ></a>
+	        </div>
+	        <div class="new3">
+	        	 	<p class="new3_1">西餐礼仪细节，让你成为完美淑女...</p>
+	        	   <div class="new3_tim">
+	        		     <p class="new3_2">12-08</p>
+	        	         <p class="new3_3">2015</p>
+	        	   </div>
+	        	   <p class="new3_4">除了面包和泡面之外，一个人的餐桌，也可以有更多选择一个人的生活...</p>
+	        </div>
+	        <div class="new4">
+	        	 	<p class="new3_1">菊花考龙配烧鹅肝和时令蔬菜...</p>
+	        	   <div class="new3_tim">
+	        		     <p class="new3_2">10-23</p>
+	        	         <p class="new3_3">2015</p>
+	        	   </div>
+	        	   <p class="new3_4">除了面包和泡面之外，一个人的餐桌，也可以有更多选择一个人的生活...</p>
+	        </div>
+	         <div class="new5">
+	        	 	<p class="new3_1">菊花考龙配烧鹅肝和时令蔬菜...</p>
+	        	   <div class="new3_tim">
+	        		     <p class="new3_2">09-28</p>
+	        	         <p class="new3_3">2015</p>
+	        	   </div>
+	        	   <p class="new3_4">除了面包和泡面之外，一个人的餐桌，也可以有更多选择一个人的生活...</p>
+	        </div>
+	        <div class="bord"></div>
+           
+	</div>
+	<div class="section section6">
+    		<ul class="jose">
+			<li class="jose_1">
+				<div class="jose_d fl"></div>
+				<div class="jose_d1 fl">
+					<p class="jose_p1">王佳尔/Joseph</p>
+					<p class="jose_p2">运营总监/PM</p>
+				</div>
+				<p class="jose_7 fl">7年互联网经验，曾服务于搜狐火炬传递，北京建筑设计研究院，日本电通大型客户，对设计品质有执着追求...
+                 <span class="jose_8 "></span>
+				</p>
+
+			</li>
+			<li class="jose_1 jos_w">
+				<div class="jose_d fl jose_dl"></div>
+				<div class="jose_d1 fl">
+					<p class="jose_p1">王佳尔/Joseph</p>
+					<p class="jose_p2">运营总监/PM</p>
+				</div>
+				<p class="jose_7 fl">7年互联网经验，曾服务于搜狐火炬传递，北京建筑设计研究院，日本电通大型客户，对设计品质有执着追求...
+                 <span class="jose_8 "></span>
+				</p>
+			</li>
+			<li class="jose_1 jos_w">
+				<div class="jose_d fl jose_dt"></div>
+				<div class="jose_d1 fl">
+					<p class="jose_p1">王佳尔/Joseph</p>
+					<p class="jose_p2">运营总监/PM</p>
+				</div>
+				<p class="jose_7 fl">7年互联网经验，曾服务于搜狐火炬传递，北京建筑设计研究院，日本电通大型客户，对设计品质有执着追求...
+                 <span class="jose_8 "></span>
+				</p>
+
+			</li>
+		</ul>
+	</div>
+	<div class="section section7">
+		    <div class="our">
+			      <p class="our_h1">合作伙伴</p>
+			 	  <p class="our_h2">OUR PARTNER</p>
+		     </div>
+		     <ul class="part">
+					<li class="part_b"> <a href="#" class="part_a1"></a></li>
+					<li class="part_b"><a href="#" class="part_a2"></a></li>
+					<li class="part_b"><a href="#" class="part_a3"></a></li>
+					<li><a href="#" class="part_a4"></a></li>
+			 </ul>
+			 <div class="lin"></div>
+			   <ul class="part part1">
+					<li class="part_b"> <a href="#" class="part_a5"></a></li>
+					<li class="part_b"><a href="#" class="part_a6"></a></li>
+					<li class="part_b"><a href="#" class="part_a7"></a></li>
+					<li><a href="#" class="part_a8"></a></li>
+			 </ul>
+	</div>
+	<div class="section section8">
+		     <div class="contact">
+			      <p class="contact_h1">联系我们</p>
+			 	  <p class="contact_h2">CONTACT</p>
+		     </div>
+		     <div class="contact1">
+		     	    <div class="contact1_l">
+		     	  	   <p class="contact1_l1">北京恢复供文化传播有限公司
+		     	  	       <a href="#" class="commun1"></a>
+		     	  	       <a href="#" class="commun2"></a>
+		     	  	       <a href="#" class="commun3"></a>
+		     	  	   </p>
+		     	  	   <p class="infor">地点：<span class="infor1">中国-北京通州区新华西街北京ONE商务楼2605室</span></p>
+		     	  	   <p class="infor infor2">邮编：<span class="infor1">108071</span></p>
+		     	  	   <p class="infor infor3">电话：<span class="infor1">010-69566550</span></p>
+		     	  	   <p class="infor infor4">手机：<span class="infor1">1358755855/15421512512</span></p>
+		     	  	   <p class="infor infor5">邮箱：<span class="infor1">kavajhh@ksah.com</span></p>
+		     	     </div>
+		     	     <div class="contact1_r">
+			     	  	 <input type="text" value="姓名" id="xm" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '姓名';}">
+			     	  	 <input type="text" value="邮箱" id="yx" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '邮箱';}">
+			     	  	 <input type="text" value="电话" id="dh" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '电话';}">
+			     	  	 <textarea value="内容" id="lr" onfocus="this.value='';" onblur="if (this.value == '') {this.value = '内容';}">内容</textarea>
+			     	  	 <label for="#">
+			     	  	 	 <input type="submit" value="提交" class="tx">
+			     	  	 </label>
+			     	  	 
+		     	     </div>
+		     </div>
+	</div>
+	
+          
+</div>
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a>
+
+</body>
+</html>
